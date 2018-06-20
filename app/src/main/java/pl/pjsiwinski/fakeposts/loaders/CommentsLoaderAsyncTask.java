@@ -20,13 +20,13 @@ import javax.net.ssl.HttpsURLConnection;
 import pl.pjsiwinski.fakeposts.R;
 import pl.pjsiwinski.fakeposts.model.FpComment;
 
-public class CommentsLoaderAcyncTask extends AsyncTask<Integer, FpComment, ArrayList<FpComment>> {
+public class CommentsLoaderAsyncTask extends AsyncTask<Integer, FpComment, ArrayList<FpComment>> {
 
     private Activity mActivity;
     private ArrayList<FpComment> commentsList;
     private String failure;
 
-    public CommentsLoaderAcyncTask(Activity activity) {
+    public CommentsLoaderAsyncTask(Activity activity) {
         mActivity = activity;
         commentsList = new ArrayList<>();
         failure = "";

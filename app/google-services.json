@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "883885222189",
+    "firebase_url": "https://emejzyn.firebaseio.com",
+    "project_id": "emejzyn",
+    "storage_bucket": "emejzyn.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:883885222189:android:5c2d0fa383bdc889",
+        "android_client_info": {
+          "package_name": "pl.pjsiwinski.fakeposts"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "883885222189-4a25f92fuf1m0qf5hfm3ibb7ta1t6ldj.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "883885222189-4a25f92fuf1m0qf5hfm3ibb7ta1t6ldj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnCVDIfSyuva2c4fTGPmT4LcUc-Tl-7tY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

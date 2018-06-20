@@ -7,9 +7,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 import pl.pjsiwinski.fakeposts.loaders.PostsListLoaderAsyncTask;
 
 public class PostsListRecyclerViewActivity extends AppCompatActivity {
+
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     private RecyclerView mRecyclerView;
     private PostsListAdapter mAdapter;
@@ -18,6 +22,7 @@ public class PostsListRecyclerViewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         setContentView(R.layout.activity_posts_list_recycler_view);
         mRecyclerView = (RecyclerView) findViewById(R.id.posts_recycler_view);
         mLayoutManager = new LinearLayoutManager(this);
@@ -30,6 +35,12 @@ public class PostsListRecyclerViewActivity extends AppCompatActivity {
                 myIntent.putExtra("postId", (int) mAdapter.getItemId(position));
                 startActivity(myIntent);
                 overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+
+                Bundle bundle = new Bundle();
+                bundle.putString(FirebaseAnalytics.Param.ITEM_ID, Long.toString(mAdapter.getItemId(position)));
+                bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "post_selected");
+                mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
+
             }
         };
 

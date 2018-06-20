@@ -29,6 +29,7 @@ public class PostsListRecyclerViewActivity extends AppCompatActivity {
                 Intent myIntent = new Intent(PostsListRecyclerViewActivity.this, PostDetailsScrollingActivity.class);
                 myIntent.putExtra("postId", (int) mAdapter.getItemId(position));
                 startActivity(myIntent);
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
             }
         };
 
